@@ -14,40 +14,21 @@ A high-performance B2B commercial platform built for industrial mineral processi
 
 ---
 
-## 2. Cloudflare Pages Deployment via GitHub Actions (`dev` branch)
+## 2. Cloudflare Pages Deployment (Direct Git Integration)
 
-This repository includes a preconfigured GitHub Actions workflow: [`.github/workflows/deploy-cloudflare.yml`](file:///.github/workflows/deploy-cloudflare.yml).
+This repository is configured for native Cloudflare Pages Git Integration connected to your GitHub repository.
 
-### Step 1: Create a Project in Cloudflare Pages
+### Cloudflare Dashboard Configuration:
 1. Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com/).
-2. In the left navigation, go to **Workers & Pages** -> **Create application** -> **Pages**.
-3. Choose **Direct Upload** (or connect git) and name your project, e.g. `syed-site`.
+2. In the navigation, go to **Compute (Workers & Pages)** -> **Create application** -> **Pages** -> **Connect to Git**.
+3. Select your repository `mohankumarsaras/syed-site`.
+4. Configure the build settings:
+   - **Project name**: `syed-site`
+   - **Production branch**: `dev`
+   - **Framework preset**: `Vite`
+   - **Build command**: `npm run build`
+   - **Build output directory**: `dist`
+   - **Root directory**: `/` (leave empty or default)
+5. Click **Save and Deploy**.
 
-### Step 2: Obtain Cloudflare API Token & Account ID
-1. **Account ID**: Available on the right sidebar of the Cloudflare Dashboard overview page.
-2. **API Token**:
-   - Go to **My Profile** -> **API Tokens** -> **Create Token**.
-   - Use the **Cloudflare Pages** template (Permissions: `Cloudflare Pages:Edit`, `Account:Read`).
-   - Copy the generated token.
-
-### Step 3: Add GitHub Repository Secrets
-In your GitHub repository, navigate to **Settings** -> **Secrets and variables** -> **Actions** -> **New repository secret**:
-- `CLOUDFLARE_API_TOKEN`: Your Cloudflare API Token.
-- `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare Account ID.
-- `CLOUDFLARE_PROJECT_NAME`: (Optional) Your Cloudflare Pages project name (defaults to `syed-site`).
-
-### Step 4: SPA Routing Support (`_redirects`)
-To support React Router client-side routing on Cloudflare Pages, a [`public/_redirects`](file:///public/_redirects) file is already in place:
-```
-/* /index.html 200
-```
-When `npm run build` runs, Vite copies this file directly into `dist/`, ensuring subpages (like `/about`, `/industries`, `/contact`) resolve without 404 errors on page refresh.
-
-### Step 5: Push to the `dev` Branch
-```bash
-git add .
-git commit -m "feat: setup cloudflare pages deployment via github actions"
-git remote add origin https://github.com/<YOUR_USERNAME>/<YOUR_REPO>.git
-git push -u origin dev
-```
-GitHub Actions will automatically trigger, build the production bundle, and publish to Cloudflare Pages.
+Cloudflare Pages automatically serves `index.html` for single-page application client-side routes (`/about`, `/industries`, `/contact`) on refresh. Every push to `dev` will trigger an automated build and deploy.
