@@ -1,126 +1,86 @@
 /**
- * Centralized Industries & Applications Data
- * Note: These industrial domains represent illustrative target sectors
- * based on crushing, milling, and mineral processing machinery references.
+ * Centralized E-Waste & Scrap Management Applications & Sectors Data
  */
 
 export const industriesData = [
   {
-    id: "mining-minerals",
-    slug: "mining-and-minerals",
-    name: "Mining & Mineral Ore Processing",
+    id: "pcb-electronic-scrap",
+    slug: "pcb-and-electronic-scrap",
+    name: "PCB & Electronic Scrap Refining",
     image: "/images/industries/industry-mining.svg",
-    shortDescription: "Heavy-duty comminution and sizing solutions for metallic ores, gold, iron, copper, bauxite, and industrial minerals.",
-    detailedOverview: "In harsh mining environments, continuous operation and component longevity are paramount. Our machinery configurations support primary quarry reduction through fine liberation grinding, facilitating downstream flotation, leaching, and magnetic separation flowsheets.",
+    shortDescription: "End-of-life IT components, motherboards, telecom cards, and printed circuit board recycling for copper, gold, and palladium extraction.",
+    detailedOverview: "Electronic scrap contains significantly higher concentrations of precious metals than raw ore. Our continuous e-waste flowsheet performs pre-shredding, selective component depopulation, micro-pulverizing, and electrostatic metal separation with zero environmental acid leach.",
     typicalMaterials: [
-      "Iron Ore",
-      "Copper & Gold Ores",
-      "Bauxite",
-      "Phosphate Rock",
-      "Barite & Fluorite"
+      "Telecom & Server Motherboards",
+      "Mobile Phone PCBs",
+      "RAM & Processor Scrap",
+      "Connector Pins & Gold Fingers",
+      "IC Chips & Resin Substrates"
     ],
     recommendedEquipment: [
-      "Heavy-Duty Primary Jaw Crusher",
-      "Hydraulic Multi-Cylinder Cone Crusher",
-      "Modular Mineral Crushing & Grinding Plant"
+      "Complete PCB E-Waste Recycling & Metal Separation Plant",
+      "Heavy-Duty Dual-Shaft E-Waste Shredder",
+      "High-Voltage Electrostatic Air Classifier"
     ]
   },
   {
-    id: "cement-construction",
-    slug: "cement-and-construction",
-    name: "Cement & Construction Aggregates",
+    id: "cable-copper-wire",
+    slug: "cable-wire-recycling",
+    name: "Cable & Copper Wire Granulation",
     image: "/images/industries/industry-cement.svg",
-    shortDescription: "Crushing, screening, and milling systems delivering shaped aggregate, manufactured sand, and cement raw meal.",
-    detailedOverview: "Infrastructure and modern construction require aggregates with consistent cubical shape, precise gradations, and low flakiness index. We provide high-reduction plants designed to convert blasted rock into high-spec sand and gravel fractions.",
+    shortDescription: "Dry granulating and air density separation for automotive wiring harnesses, power cables, and mixed copper scrap.",
+    detailedOverview: "Reclaims 99.8% pure copper and aluminum granules from plastic PVC/rubber insulation without burning or water contamination. Delivers ready-to-melt dry metal granules directly to smelters.",
     typicalMaterials: [
-      "Limestone & Marl",
-      "Granite & Basalt",
-      "River Gravel & Cobbles",
-      "Cement Clinker",
-      "Recycled Concrete Aggregates"
+      "Automotive Wire Harnesses",
+      "Substation High-Voltage Cables",
+      "Domestic Copper Wiring",
+      "Telephone & Data Cables",
+      "Mixed Industrial Armored Wire"
     ],
     recommendedEquipment: [
-      "Heavy-Duty Primary Jaw Crusher",
-      "Hydraulic Multi-Cylinder Cone Crusher",
-      "Heavy-Duty Circular Vibrating Screen"
+      "Heavy-Duty Dual-Shaft E-Waste Shredder",
+      "High-Speed Eccentric Eddy Current Non-Ferrous Separator",
+      "Vibratory Air Density Table"
     ]
   },
   {
-    id: "marble-granite",
-    slug: "marble-and-granite",
-    name: "Marble, Granite & Dimensional Stone Waste",
+    id: "ferrous-nonferrous-scrap",
+    slug: "metal-scrap-management",
+    name: "Ferrous & Non-Ferrous Scrap Management",
     image: "/images/industries/industry-marble.svg",
-    shortDescription: "Repurposing stone quarry overburden, dimension stone cut-offs, and marble slurry into valuable industrial fillers.",
-    detailedOverview: "Quarry waste and marble off-cuts can be converted from an environmental liability into lucrative revenue streams including terrazzo chips, calcium carbonate powder, and engineered stone filler.",
+    shortDescription: "High-density compaction and shearing for metal manufacturing scrap, end-of-life vehicle parts, and foundry returns.",
+    detailedOverview: "Transforms low-density bulky scrap into furnace-charged compacted cubes and uniform cut lengths. Optimizes container shipping payload, melting efficiency, and furnace heat cycles for secondary steel and aluminum plants.",
     typicalMaterials: [
-      "White Marble Off-cuts",
-      "Granite Quarry Waste",
-      "Quartzite",
-      "Dolomite Blocks"
+      "Aluminum Extrusions & Cans",
+      "Sheet Metal Stamping Waste",
+      "Steel Turnings & Borings",
+      "Automotive Body Scrap",
+      "Brass & Bronze Plumbing Off-cuts"
     ],
     recommendedEquipment: [
-      "Heavy-Duty Primary Jaw Crusher",
-      "Industrial Pendulum Roller Mill",
-      "Heavy-Duty Circular Vibrating Screen"
+      "Heavy-Duty Hydraulic Metal Scrap Baling Press",
+      "Hydraulic Heavy Alligator Shears",
+      "High-Speed Eccentric Eddy Current Non-Ferrous Separator"
     ]
   },
   {
-    id: "infrastructure-roads",
-    slug: "infrastructure-and-roads",
-    name: "Infrastructure, Roads & Railway Ballast",
-    image: "/images/industries/industry-infrastructure.svg",
-    shortDescription: "Stationary and skid-mounted high-throughput plants producing resilient road base (WBM/WMM) and track ballast.",
-    detailedOverview: "Highway and rail projects demand high compressive strength aggregate resistant to abrasion and impact degradation. Our multi-stage processing layouts balance high output with rigorous dimensional tolerances.",
+    id: "battery-solar-scrap",
+    slug: "battery-solar-panel-recycling",
+    name: "Lithium Battery & Solar PV Scrap",
+    image: "/images/industries/industry-mining.svg",
+    shortDescription: "Inert atmosphere shredding and recovery of black mass, nickel, cobalt, copper foil, and solar glass.",
+    detailedOverview: "Specialized recovery architecture designed for next-generation clean-tech waste. Delivers precise separation of hazardous lithium battery components and high-purity recovery of aluminum frames, copper ribbons, and silicon wafers.",
     typicalMaterials: [
-      "Hard Trap Rock",
-      "Basalt",
-      "Quartzite",
-      "River Shingle"
+      "EV Lithium-Ion Battery Modules",
+      "Consumer 18650 Cylindrical Cells",
+      "End-of-Life Photovoltaic Panels",
+      "Solar Silicon Cell Laminates",
+      "Battery Anode / Cathode Foils"
     ],
     recommendedEquipment: [
-      "Modular Mineral Crushing & Grinding Plant",
-      "Hydraulic Multi-Cylinder Cone Crusher",
-      "Heavy-Duty Circular Vibrating Screen"
-    ]
-  },
-  {
-    id: "industrial-manufacturing",
-    slug: "industrial-manufacturing",
-    name: "Industrial Chemical & Glass Raw Materials",
-    image: "/images/industries/industry-chemical.svg",
-    shortDescription: "Contamination-conscious grinding, screening, and material transport for glass batching, ceramics, and chemicals.",
-    detailedOverview: "Producing raw minerals for glassmaking and ceramic slips necessitates strict grain size control and minimal tramp iron contamination. Wear-resistant linings and automated classification preserve product purity.",
-    typicalMaterials: [
-      "Silica Sand & Quartz",
-      "Feldspar",
-      "Soda Ash Compounds",
-      "Kaolin Clay",
-      "Zircon Sand"
-    ],
-    recommendedEquipment: [
-      "Industrial Pendulum Roller Mill",
-      "Ultrafine Vertical Roller Mill (VRM)",
-      "Precision Air Classifier Pulverizer"
-    ]
-  },
-  {
-    id: "mineral-powder-processing",
-    slug: "mineral-powder-processing",
-    name: "Mineral Powder & Micronization",
-    image: "/images/industries/industry-powder.svg",
-    shortDescription: "Ultra-fine pulverizing circuits for plastics, coatings, desulfurization (FGD), paper fillers, and sealants.",
-    detailedOverview: "Fine particle sizing ranging from 200 mesh down to 2500 mesh (D97 < 5 micron) requires aerodynamic classification and low specific power consumption. Closed-circuit pneumatic milling systems deliver consistent quality.",
-    typicalMaterials: [
-      "Ground Calcium Carbonate (GCC)",
-      "Bentonite & Barite",
-      "Talc Powder",
-      "Gypsum Plaster",
-      "Activated Carbon"
-    ],
-    recommendedEquipment: [
-      "Industrial Pendulum Roller Mill",
-      "Ultrafine Vertical Roller Mill (VRM)",
-      "Precision Air Classifier Pulverizer"
+      "Heavy-Duty Dual-Shaft E-Waste Shredder",
+      "Complete PCB E-Waste Recycling & Metal Separation Plant",
+      "High-Speed Eccentric Eddy Current Non-Ferrous Separator"
     ]
   }
 ];

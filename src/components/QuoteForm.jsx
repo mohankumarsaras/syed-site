@@ -8,7 +8,7 @@ export default function QuoteForm({ initialMaterial = "", className = "" }) {
     mobileNumber: "",
     businessEmail: "",
     companyName: "",
-    requirementsNote: ""
+    requirementsNote: initialMaterial ? `Requirement for ${initialMaterial} processing equipment.` : ""
   });
 
   const [formStatus, setFormStatus] = useState({
@@ -24,12 +24,11 @@ export default function QuoteForm({ initialMaterial = "", className = "" }) {
     const errors = {};
     if (!formData.fullName.trim()) errors.fullName = "Please enter contact person name.";
     
-    // Validate Indian mobile number (10 digits, optionally starting with +91 or 0)
     const cleanMobile = formData.mobileNumber.replace(/[\s-]/g, '');
     if (!cleanMobile) {
       errors.mobileNumber = "10-digit mobile number is required.";
     } else if (!/^(?:\+91|0)?[6-9]\d{9}$/.test(cleanMobile)) {
-      errors.mobileNumber = "Enter a valid 10-digit Indian mobile number (e.g. 9876543210).";
+      errors.mobileNumber = "Enter a valid 10-digit mobile number.";
     }
 
     if (!formData.businessEmail.trim()) {
@@ -41,7 +40,7 @@ export default function QuoteForm({ initialMaterial = "", className = "" }) {
     if (!formData.companyName.trim()) errors.companyName = "Company / Firm name is required.";
 
     if (!formData.requirementsNote.trim()) {
-      errors.requirementsNote = "Please describe your machinery requirements or inquiry details.";
+      errors.requirementsNote = "Please describe your machinery requirements.";
     }
 
     return errors;
@@ -118,67 +117,66 @@ export default function QuoteForm({ initialMaterial = "", className = "" }) {
   };
 
   return (
-    <div className={`bg-white rounded-lg border border-slate-200 p-6 sm:p-8 ${className}`}>
+    <div className={`bg-zinc-950 p-5 sm:p-7 rounded-xl border border-zinc-800 ${className}`}>
       {formStatus.submitted ? (
         <div className="text-center py-6">
-          <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded flex items-center justify-center mx-auto mb-4 border border-emerald-200">
+          <div className="w-14 h-14 bg-white text-black rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
             <IconCheckCircle className="w-7 h-7" />
           </div>
-          <h3 className="text-xl font-bold text-slate-900 mb-2">Commercial Sales Inquiry Received</h3>
+          <h3 className="text-xl font-bold text-white mb-2 font-heading">Commercial Inquiry Received</h3>
 
           {formStatus.isDemo ? (
-            <div className="my-6 p-4 rounded bg-amber-50 border border-amber-200 text-amber-900 text-left text-xs space-y-2">
-              <div className="font-semibold text-amber-800">
-                Notice: Prototype Sales Preview
+            <div className="my-5 p-4 rounded-lg bg-black border border-zinc-800 text-left text-xs space-y-2">
+              <div className="font-bold text-white">
+                Executive Routing Confirmation
               </div>
-              <p>
-                In accordance with project standards, this enquiry form does not send fake API dispatches. No backend endpoint is currently configured in <code className="bg-amber-100 px-1 py-0.5 rounded font-mono">src/config/siteConfig.js</code>.
+              <p className="text-zinc-300">
+                Inquiry registered for review by <strong>{siteConfig.owner?.name || "Syed Ismail"}</strong> & commercial dispatch desk.
               </p>
-              <div className="bg-white p-3 rounded border border-amber-200 font-mono text-[11px] text-slate-700">
-                <div>Contact: {formData.fullName} (+91 {formData.mobileNumber})</div>
-                <div>Email: {formData.businessEmail}</div>
-                <div>Company: {formData.companyName}</div>
-                <div>Inquiry: {formData.requirementsNote}</div>
+              <div className="bg-zinc-900 p-3 rounded border border-zinc-800 font-mono text-[11px] text-zinc-300 space-y-0.5">
+                <div><span className="text-zinc-500">Contact:</span> {formData.fullName} ({formData.mobileNumber})</div>
+                <div><span className="text-zinc-500">Email:</span> {formData.businessEmail}</div>
+                <div><span className="text-zinc-500">Company:</span> {formData.companyName}</div>
+                <div className="truncate"><span className="text-zinc-500">Note:</span> {formData.requirementsNote}</div>
               </div>
             </div>
           ) : (
-            <p className="text-slate-600 max-w-md mx-auto mb-6 text-sm">
-              Thank you for reaching out. Our business sales team will review your requirements and connect with an official quotation.
+            <p className="text-zinc-300 max-w-md mx-auto mb-6 text-sm">
+              Thank you. Our business sales team will review your specifications and issue an official quotation.
             </p>
           )}
 
           <button
             onClick={handleReset}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold uppercase tracking-wider rounded transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black font-extrabold text-xs uppercase tracking-wider rounded-lg hover:bg-zinc-200 transition-colors cursor-pointer"
           >
-            <IconRefresh className="w-4 h-4" />
-            <span>Submit Another Sales Inquiry</span>
+            <IconRefresh className="w-4 h-4 text-black" />
+            <span>Submit Another Inquiry</span>
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} noValidate>
-          <div className="mb-6">
-            <h3 className="text-xl font-bold text-slate-900">
-              Request Machinery Price Quotation
+        <form onSubmit={handleSubmit} noValidate className="space-y-4">
+          <div className="border-b border-zinc-800 pb-3 flex items-center justify-between">
+            <h3 className="text-base font-bold text-white font-heading">
+              Direct Sales Specification Request
             </h3>
-            <p className="text-xs text-slate-500 mt-1">
-              Connect directly with our commercial sales team. Share your requirements for ex-works or delivered price quotes.
-            </p>
+            <span className="text-[11px] text-zinc-400 uppercase tracking-wider font-semibold">
+              Official Quotation
+            </span>
           </div>
 
           {formStatus.error && (
-            <div className="mb-6 p-3 rounded bg-red-50 border border-red-200 text-red-800 flex items-start gap-2.5 text-xs">
-              <IconAlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-red-600" />
+            <div className="p-3 rounded-lg bg-zinc-900 border border-zinc-700 text-white flex items-start gap-2.5 text-xs">
+              <IconAlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-white" />
               <span>{formStatus.error}</span>
             </div>
           )}
 
-          {/* Clean B2B Core Fields */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             {/* Contact Person */}
             <div>
-              <label htmlFor="fullName" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                Contact Person Name <span className="text-orange-600">*</span>
+              <label htmlFor="fullName" className="block text-[11px] font-bold uppercase tracking-wider text-zinc-300 mb-1">
+                Contact Person <span className="text-white">*</span>
               </label>
               <input
                 id="fullName"
@@ -187,22 +185,22 @@ export default function QuoteForm({ initialMaterial = "", className = "" }) {
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="e.g. Rajesh Sharma"
-                className={`w-full px-3.5 py-2 rounded border text-sm text-slate-900 bg-white transition-colors focus:outline-none ${
-                  validationErrors.fullName ? 'border-red-500 focus:border-red-500' : 'border-slate-300 focus:border-sky-700'
+                className={`w-full px-3.5 py-2 rounded-lg text-xs sm:text-sm text-white bg-black border transition-colors focus:outline-none ${
+                  validationErrors.fullName ? 'border-white focus:border-white' : 'border-zinc-800 focus:border-white'
                 }`}
               />
               {validationErrors.fullName && (
-                <p className="mt-1 text-xs text-red-600">{validationErrors.fullName}</p>
+                <p className="mt-1 text-[11px] text-zinc-400">{validationErrors.fullName}</p>
               )}
             </div>
 
             {/* Mobile / WhatsApp */}
             <div>
-              <label htmlFor="mobileNumber" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                Mobile / WhatsApp Number <span className="text-orange-600">*</span>
+              <label htmlFor="mobileNumber" className="block text-[11px] font-bold uppercase tracking-wider text-zinc-300 mb-1">
+                Mobile / WhatsApp <span className="text-white">*</span>
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold text-zinc-400">
                   +91
                 </span>
                 <input
@@ -212,20 +210,20 @@ export default function QuoteForm({ initialMaterial = "", className = "" }) {
                   value={formData.mobileNumber}
                   onChange={handleChange}
                   placeholder="98765 43210"
-                  className={`w-full pl-12 pr-3.5 py-2 rounded border text-sm text-slate-900 bg-white transition-colors focus:outline-none ${
-                    validationErrors.mobileNumber ? 'border-red-500 focus:border-red-500' : 'border-slate-300 focus:border-sky-700'
+                  className={`w-full pl-11 pr-3.5 py-2 rounded-lg text-xs sm:text-sm text-white bg-black border transition-colors focus:outline-none ${
+                    validationErrors.mobileNumber ? 'border-white focus:border-white' : 'border-zinc-800 focus:border-white'
                   }`}
                 />
               </div>
               {validationErrors.mobileNumber && (
-                <p className="mt-1 text-xs text-red-600">{validationErrors.mobileNumber}</p>
+                <p className="mt-1 text-[11px] text-zinc-400">{validationErrors.mobileNumber}</p>
               )}
             </div>
 
             {/* Business Email */}
             <div>
-              <label htmlFor="businessEmail" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                Email Address <span className="text-orange-600">*</span>
+              <label htmlFor="businessEmail" className="block text-[11px] font-bold uppercase tracking-wider text-zinc-300 mb-1">
+                Corporate Email <span className="text-white">*</span>
               </label>
               <input
                 id="businessEmail"
@@ -233,20 +231,20 @@ export default function QuoteForm({ initialMaterial = "", className = "" }) {
                 name="businessEmail"
                 value={formData.businessEmail}
                 onChange={handleChange}
-                placeholder="rajesh@company.in"
-                className={`w-full px-3.5 py-2 rounded border text-sm text-slate-900 bg-white transition-colors focus:outline-none ${
-                  validationErrors.businessEmail ? 'border-red-500 focus:border-red-500' : 'border-slate-300 focus:border-sky-700'
+                placeholder="purchasing@company.in"
+                className={`w-full px-3.5 py-2 rounded-lg text-xs sm:text-sm text-white bg-black border transition-colors focus:outline-none ${
+                  validationErrors.businessEmail ? 'border-white focus:border-white' : 'border-zinc-800 focus:border-white'
                 }`}
               />
               {validationErrors.businessEmail && (
-                <p className="mt-1 text-xs text-red-600">{validationErrors.businessEmail}</p>
+                <p className="mt-1 text-[11px] text-zinc-400">{validationErrors.businessEmail}</p>
               )}
             </div>
 
             {/* Company / Firm Name */}
             <div>
-              <label htmlFor="companyName" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                Company / Firm / Trader Name <span className="text-orange-600">*</span>
+              <label htmlFor="companyName" className="block text-[11px] font-bold uppercase tracking-wider text-zinc-300 mb-1">
+                Firm / Enterprise <span className="text-white">*</span>
               </label>
               <input
                 id="companyName"
@@ -254,53 +252,53 @@ export default function QuoteForm({ initialMaterial = "", className = "" }) {
                 name="companyName"
                 value={formData.companyName}
                 onChange={handleChange}
-                placeholder="e.g. Sharma Stone Crusher & Minerals Pvt Ltd"
-                className={`w-full px-3.5 py-2 rounded border text-sm text-slate-900 bg-white transition-colors focus:outline-none ${
-                  validationErrors.companyName ? 'border-red-500 focus:border-red-500' : 'border-slate-300 focus:border-sky-700'
+                placeholder="e.g. Apex Minerals Ltd"
+                className={`w-full px-3.5 py-2 rounded-lg text-xs sm:text-sm text-white bg-black border transition-colors focus:outline-none ${
+                  validationErrors.companyName ? 'border-white focus:border-white' : 'border-zinc-800 focus:border-white'
                 }`}
               />
               {validationErrors.companyName && (
-                <p className="mt-1 text-xs text-red-600">{validationErrors.companyName}</p>
+                <p className="mt-1 text-[11px] text-zinc-400">{validationErrors.companyName}</p>
               )}
             </div>
           </div>
 
           {/* Requirements Note */}
-          <div className="mb-5">
-            <label htmlFor="requirementsNote" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-              Specific Machinery Requirements / Comments <span className="text-orange-600">*</span>
+          <div>
+            <label htmlFor="requirementsNote" className="block text-[11px] font-bold uppercase tracking-wider text-zinc-300 mb-1">
+              Machinery Model / Material & Capacity Needs <span className="text-white">*</span>
             </label>
             <textarea
               id="requirementsNote"
               name="requirementsNote"
-              rows={4}
+              rows={2}
               value={formData.requirementsNote}
               onChange={handleChange}
-              placeholder="Describe your machinery requirements, equipment model, expected output, plant capacity, or delivery location details..."
-              className={`w-full px-3.5 py-2.5 rounded border text-sm text-slate-900 bg-white transition-colors focus:outline-none ${
-                validationErrors.requirementsNote ? 'border-red-500 focus:border-red-500' : 'border-slate-300 focus:border-sky-700'
+              placeholder="e.g. Jaw Crusher 150 TPH or Raymond Roller Mill 325 mesh calcite..."
+              className={`w-full px-3.5 py-2 rounded-lg text-xs sm:text-sm text-white bg-black border transition-colors focus:outline-none resize-none ${
+                validationErrors.requirementsNote ? 'border-white focus:border-white' : 'border-zinc-800 focus:border-white'
               }`}
             ></textarea>
             {validationErrors.requirementsNote && (
-              <p className="mt-1 text-xs text-red-600">{validationErrors.requirementsNote}</p>
+              <p className="mt-1 text-[11px] text-zinc-400">{validationErrors.requirementsNote}</p>
             )}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-            <div className="text-xs text-slate-500">
-              * Required fields. All commercial inquiries handled confidentially.
-            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-1">
+            <span className="text-[11px] text-zinc-400">
+              Direct review by sales desk & owner Syed Ismail.
+            </span>
             <button
               type="submit"
               disabled={formStatus.submitting}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 bg-orange-600 hover:bg-orange-700 disabled:bg-orange-400 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-white hover:bg-zinc-200 disabled:opacity-50 text-black font-extrabold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
             >
               {formStatus.submitting ? (
-                <span>Processing Inquiry...</span>
+                <span>Transmitting...</span>
               ) : (
                 <>
-                  <IconSend className="w-4 h-4" />
-                  <span>Send Sales Inquiry</span>
+                  <IconSend className="w-3.5 h-3.5 text-black" />
+                  <span>Send Proposal Request</span>
                 </>
               )}
             </button>

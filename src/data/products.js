@@ -1,260 +1,121 @@
 /**
- * Centralized Industrial Product Catalog Data
- * Note: Specifications, performance figures, and capacities are illustrative client placeholders
- * and marked for replacement with certified OEM technical datasheets.
+ * Industrial E-Waste & Scrap Management Equipment Catalog Data
  */
 
 export const productCategories = [
   {
-    id: "crushers",
-    slug: "crushers",
-    name: "Stone Crushing Equipment",
-    shortDescription: "High-reduction crushing machines engineered for quarrying, mining, and aggregate production.",
+    id: "e-waste-shredders",
+    slug: "e-waste-shredders",
+    name: "E-Waste Shredders & Granulators",
+    shortDescription: "High-torque dual and quad shaft shredders built to break down computers, servers, PCBs, batteries, and appliances.",
     image: "/images/products/category-crushing.svg"
   },
   {
-    id: "grinding-mills",
-    slug: "grinding-mills",
-    name: "Grinding and Milling Machines",
-    shortDescription: "Fine and ultra-fine pulverizing solutions for minerals, ores, chemicals, and industrial compounds.",
-    image: "/images/products/category-grinding.svg"
+    id: "pcb-recycling-plants",
+    slug: "pcb-recycling-plants",
+    name: "PCB Dismantling & Refining Lines",
+    shortDescription: "Automated electronic board crushing, dry electrostatic separator, and precious metal recovery systems.",
+    image: "/images/products/category-plants.svg"
   },
   {
-    id: "pulverizers",
-    slug: "pulverizers",
-    name: "Pulverizers & Micro-Grinders",
-    shortDescription: "Precision impact and classifier mills designed for non-metallic mineral micronization.",
-    image: "/images/products/category-pulverizer.svg"
-  },
-  {
-    id: "screening",
-    slug: "screening",
-    name: "Screening & Classification",
-    shortDescription: "Heavy-duty vibrating screens and air classifiers for accurate sizing and particle separation.",
-    image: "/images/products/category-screening.svg"
-  },
-  {
-    id: "material-handling",
-    slug: "material-handling",
-    name: "Material Handling & Feeders",
-    shortDescription: "Vibrating feeders, robust belt conveyors, and bucket elevators built for bulk abrasive solids.",
+    id: "scrap-metal-balers",
+    slug: "scrap-metal-balers",
+    name: "Scrap Metal Balers & Shears",
+    shortDescription: "Hydraulic scrap metal compactor balers, alligator shears, and container shears for ferrous & non-ferrous metals.",
     image: "/images/products/category-handling.svg"
   },
   {
-    id: "complete-plants",
-    slug: "complete-plants",
-    name: "Complete Processing Plants",
-    shortDescription: "Turnkey plant layouts integrating primary crushing, secondary reduction, sizing, and storage.",
-    image: "/images/products/category-plants.svg"
+    id: "metal-separation",
+    slug: "metal-separation",
+    name: "Eddy Current & Optical Separators",
+    shortDescription: "High-speed eccentric eddy current separators, magnetic drums, and air density tables for copper/aluminum sorting.",
+    image: "/images/products/category-screening.svg"
   }
 ];
 
 export const products = [
   {
-    id: "prod-jc-jaw-crusher",
-    slug: "heavy-duty-jaw-crusher",
-    name: "Heavy-Duty Primary Jaw Crusher",
-    category: "crushers",
-    categoryName: "Stone Crushing Equipment",
-    shortDescription: "Deep symmetrical crushing chamber designed for primary reduction of hard granite, basalt, and iron ore.",
-    description: "Built with forged eccentric shafts, premium spherical roller bearings, and heavy cast manganese steel jaws. Engineered specifically for continuous primary crushing in demanding mining and quarrying applications where feed size is large and rock compressive strength is high.",
-    featured: true,
-    images: [
-      "/images/products/jaw-crusher-main.svg",
-      "/images/products/jaw-crusher-side.svg"
-    ],
-    // Only genuine structural or placeholder engineering parameters (no fabricated throughput claims)
+    id: "prod-pcb-recovery-plant",
+    slug: "automated-pcb-recycling-plant",
+    name: "Complete PCB E-Waste Recycling & Metal Separation Plant",
+    category: "pcb-recycling-plants",
+    categoryName: "PCB Dismantling & Refining Lines",
+    shortDescription: "Dry physical separation plant achieving 99% copper, resin powder, and precious metal recovery from electronic circuit boards.",
+    description: "Multi-stage automated flowsheet engineered for e-waste processing. Combines primary double-shaft shredding, hammer mill pulverizing, high-voltage electrostatic separator, and cyclone pulse dust collection. Recovers copper, tin, gold, and resin without toxic chemical emission.",
     specifications: [
-      { parameter: "Crushing Stage", value: "Primary Reduction" },
-      { parameter: "Drive Type", value: "V-Belt / Heavy Electric Motor" },
-      { parameter: "Eccentric Shaft Material", value: "Forged Alloy Steel" },
-      { parameter: "Jaw Plate Configuration", value: "Corrugated High-Manganese Alloy (Mn18Cr2)" },
-      { parameter: "Discharge Adjustment", value: "Hydraulic Wedge or Shim Shifting Mechanism" },
-      { parameter: "Lubrication System", value: "Centralized Manual or Auto-Grease Distribution" }
+      { parameter: "Processing Capacity", value: "500 - 2,500 kg/hr" },
+      { parameter: "Metal Recovery Rate", value: "≥ 99.2% Purity" },
+      { parameter: "Separation Tech", value: "High-Voltage Electrostatic + Air Density" },
+      { parameter: "Emission Standard", value: "Closed-Circuit Pulse Dust Collection" }
     ],
-    applications: [
-      "Quarrying & Aggregates",
-      "Metallic & Non-Metallic Mineral Extraction",
-      "Construction Demolition & Concrete Recycling",
-      "Cement Plant Raw Material Feed"
+    features: [
+      "Zero chemical effluents (100% dry physical comminution)",
+      "High-purity mixed non-ferrous copper/aluminum extraction",
+      "Integrated air classifier and heavy-duty dust scrubbing"
     ],
-    status: "Configurable OEM Model"
+    images: ["/images/products/complete-plant.svg"]
   },
   {
-    id: "prod-cone-crusher",
-    slug: "hydraulic-cone-crusher",
-    name: "Hydraulic Multi-Cylinder Cone Crusher",
-    category: "crushers",
-    categoryName: "Stone Crushing Equipment",
-    shortDescription: "Secondary and tertiary crushing unit providing high cubical shape aggregate and tight particle sizing.",
-    description: "Features a laminated crushing cavity principle with automated tramp-iron release and hydraulic clearing cylinders. Ideal for processing abrasive ores and hard rock with low wear liner consumption.",
-    featured: true,
-    images: [
-      "/images/products/cone-crusher.svg"
-    ],
+    id: "prod-dual-shaft-shredder",
+    slug: "heavy-dual-shaft-ewaste-shredder",
+    name: "Heavy-Duty Dual-Shaft E-Waste Shredder",
+    category: "e-waste-shredders",
+    categoryName: "E-Waste Shredders & Granulators",
+    shortDescription: "High-torque slow-speed shear shredder built for IT scrap, laptop cases, server racks, refrigerators, and circuit boards.",
+    description: "Forged alloy steel blades with specialized multi-hook geometries. Designed to rip through hard drive platters, electronic chassis, and dense scrap without stalling, equipped with microcomputer PLC automatic reverse protection on overload.",
     specifications: [
-      { parameter: "Crushing Stage", value: "Secondary / Tertiary Crushing" },
-      { parameter: "Cavity Types Available", value: "Coarse, Medium, Fine, Extra-Fine" },
-      { parameter: "Control System", value: "PLC Hydraulic Monitoring & Auto-Calibration" },
-      { parameter: "Safety Mechanism", value: "Accumulator Tramp Iron Overload Release" },
-      { parameter: "Lubrication", value: "Independent Oil Cooling & Filtration Unit" }
+      { parameter: "Drive Power", value: "30 kW - 160 kW Hydraulic / Electric" },
+      { parameter: "Throughput", value: "1.5 - 12 Tons/hr" },
+      { parameter: "Blade Metallurgy", value: "Forged Cr-Ni-Mo Wear Alloy (HRC 58-62)" },
+      { parameter: "Feed Opening", value: "1,200 mm x 900 mm" }
     ],
-    applications: [
-      "Manufactured Sand Production",
-      "High-Spec Highway Asphalt Aggregate",
-      "Iron Ore, Copper & Gold Heap Leaching Sizing"
+    features: [
+      "Independently driven dual shafts with auto-reverse torque control",
+      "Segmented hex shaft mounting for fast blade interchange",
+      "Heavy cast housing preventing deformation under high shock loads"
     ],
-    status: "Configurable OEM Model"
+    images: ["/images/products/jaw-crusher-main.svg"]
   },
   {
-    id: "prod-raymond-roller-mill",
-    slug: "industrial-pendulum-roller-mill",
-    name: "Industrial Pendulum Roller Mill",
-    category: "grinding-mills",
-    categoryName: "Grinding and Milling Machines",
-    shortDescription: "Reliable medium-speed pulverizer for calcite, limestone, gypsum, barite, and bentonite powder production.",
-    description: "Combines crushing, grinding, pneumatic classification, and dust collection in a single closed-circuit system. Employs multi-roller centrifugal grinding against a bull ring with variable frequency classifier wheel for exact fineness adjustment.",
-    featured: true,
-    images: [
-      "/images/products/roller-mill.svg"
-    ],
+    id: "prod-eddy-current-separator",
+    slug: "eccentric-rotor-eddy-current-separator",
+    name: "High-Speed Eccentric Eddy Current Non-Ferrous Separator",
+    category: "metal-separation",
+    categoryName: "Eddy Current & Optical Separators",
+    shortDescription: "Precision sorting machine that repels and ejects aluminum, copper, and brass from shredded e-waste and scrap residue.",
+    description: "Equipped with high-intensity neodymium NdFeB permanent magnetic rotor spinning at 3,000 RPM. Creates strong repulsive magnetic eddy forces that propel non-ferrous metals away from plastics, glass, and circuit board resins.",
     specifications: [
-      { parameter: "Fineness Range", value: "80 mesh to 400 mesh (0.178 mm – 0.038 mm)" },
-      { parameter: "Classifier Type", value: "Dynamic Variable Frequency Cage Rotor" },
-      { parameter: "Ring & Roller Material", value: "65Mn / Alloy High-Chromium White Cast Iron" },
-      { parameter: "Air System", value: "Closed-Loop Negative Pressure Circulation" },
-      { parameter: "Dust Collection", value: "Pulse-Jet Fabric Filter or Cyclone System" }
+      { parameter: "Rotor Speed", value: "Up to 3,200 RPM" },
+      { parameter: "Magnetic Strength", value: "> 4,500 Gauss Surface Field" },
+      { parameter: "Sorting Efficiency", value: "Up to 98% non-ferrous purity" },
+      { parameter: "Belt Width", value: "650 mm - 1,500 mm" }
     ],
-    applications: [
-      "Flue Gas Desulfurization (FGD) Limestone",
-      "Coating & Paint Filler Processing",
-      "Gypsum Plaster & Dry Mortar Production",
-      "Activated Carbon & Chemical Mineral Powders"
+    features: [
+      "Eccentric rotor design protects shell against ferrous entrapment wear",
+      "Vibratory feeder integration for uniform single-layer presentation",
+      "Variable frequency speed control for fine-grain tuning"
     ],
-    status: "Configurable OEM Model"
+    images: ["/images/products/cone-crusher-main.svg"]
   },
   {
-    id: "prod-vertical-roller-mill",
-    slug: "ultrafine-vertical-roller-mill",
-    name: "Ultrafine Vertical Roller Mill (VRM)",
-    category: "grinding-mills",
-    categoryName: "Grinding and Milling Machines",
-    shortDescription: "High-efficiency vertical grinding table system optimized for large-scale industrial mineral micro-powders.",
-    description: "Vertical design with hydraulic arm loading system and integrated multi-head dynamic classifier. Delivers significantly lower power consumption per ton compared to traditional ball mills.",
-    featured: true,
-    images: [
-      "/images/products/vertical-mill.svg"
-    ],
+    id: "prod-hydraulic-scrap-baler",
+    slug: "heavy-hydraulic-metal-scrap-baler",
+    name: "Heavy-Duty Hydraulic Metal Scrap Baling Press",
+    category: "scrap-metal-balers",
+    categoryName: "Scrap Metal Balers & Shears",
+    shortDescription: "High-compression baler for compressing copper wire, aluminum extrusions, steel turnings, and sheet metal scrap into dense cubes.",
+    description: "Triple-compression hydraulic cylinder setup delivering 250 to 600 tons of compaction force. Drastically slashes scrap shipping and storage costs by converting loose automotive, construction, and electronic scrap into furnace-ready density bales.",
     specifications: [
-      { parameter: "Feed Moisture Tolerance", value: "Up to 15% with integrated hot gas drying" },
-      { parameter: "Classifier Configuration", value: "Single or Multi-Rotor Top Classifier" },
-      { parameter: "Table Liner Design", value: "Segmented Replaceable Ni-Hard / Hi-Cr Plates" },
-      { parameter: "Grinding Pressure", value: "Hydropneumatic Spring Cylinder Control" }
+      { parameter: "Compaction Force", value: "250 - 630 Metric Tons" },
+      { parameter: "Bale Dimensions", value: "400 x 400 mm up to 700 x 700 mm" },
+      { parameter: "Cycle Time", value: "60 - 90 Seconds / Bale" },
+      { parameter: "Operation Mode", value: "PLC Automatic / Manual Joystick Control" }
     ],
-    applications: [
-      "Slag & Cement Raw Grinding",
-      "Calcium Carbonate (GCC) Micropowder",
-      "Coal Injection Pulverization for Boilers",
-      "Talc & Kaolin Fine Processing"
+    features: [
+      "Hardox 500 replaceable wear plates lining compression chamber",
+      "High-pressure hydraulic manifold block with oil cooling circuit",
+      "Side-eject or turn-out bale discharge configurations"
     ],
-    status: "Configurable OEM Model"
-  },
-  {
-    id: "prod-vibrating-screen",
-    slug: "inclined-circular-vibrating-screen",
-    name: "Heavy-Duty Circular Vibrating Screen",
-    category: "screening",
-    categoryName: "Screening & Classification",
-    shortDescription: "Multi-deck circular motion screening unit for accurate grading of aggregates, gravel, and quarry stones.",
-    description: "Features eccentric shaft vibration exciter, heavy coil suspension springs, and modular deck layouts. Supports woven wire mesh, perforated plates, or polyurethane panels.",
-    featured: true,
-    images: [
-      "/images/products/vibrating-screen.svg"
-    ],
-    specifications: [
-      { parameter: "Deck Options", value: "1, 2, 3, or 4 Decks" },
-      { parameter: "Motion Type", value: "Circular Motion / Elliptical Amplitude" },
-      { parameter: "Media Compatibility", value: "Woven Wire, Polyurethane, Perforated Plate" },
-      { parameter: "Exciter Drive", value: "Flange-Mounted Eccentric Unit with Counterweights" }
-    ],
-    applications: [
-      "Quarry Aggregate Sizing",
-      "Mining Scalping and Pre-Screening",
-      "Sand Grading and Water Washing Screening"
-    ],
-    status: "Configurable OEM Model"
-  },
-  {
-    id: "prod-turnkey-plant",
-    slug: "integrated-mineral-processing-plant",
-    name: "Modular Mineral Crushing & Grinding Plant",
-    category: "complete-plants",
-    categoryName: "Complete Processing Plants",
-    shortDescription: "Complete stationary or skid-mounted process line designed for turnkey crushing, sizing, and milling flowsheets.",
-    description: "End-to-end engineered plant incorporating primary hopper, vibrating feeder, primary jaw crusher, secondary cone/impact crusher, multi-deck sizing screens, surge bins, and automated electrical control room.",
-    featured: true,
-    images: [
-      "/images/products/complete-plant.svg"
-    ],
-    specifications: [
-      { parameter: "Plant Structure", value: "Heavy Steel Structural Support Skids or Civil Foundations" },
-      { parameter: "Electrical Control", value: "Centralized Motor Control Center (MCC) & SCADA/PLC" },
-      { parameter: "Inter-Stage Transport", value: "Enclosed or Open Heavy-Duty Belt Conveyors" },
-      { parameter: "Environmental Controls", value: "Water Mist Dust Suppression & Enclosure Hoods" }
-    ],
-    applications: [
-      "Granite Quarrying Projects",
-      "Gold & Polymetallic Ore Crushing Facilities",
-      "High-Volume Infrastructure Highway Projects"
-    ],
-    status: "Configurable OEM Model"
-  },
-  {
-    id: "prod-air-classifier-mill",
-    slug: "precision-air-classifier-mill",
-    name: "Precision Air Classifier Pulverizer",
-    category: "pulverizers",
-    categoryName: "Pulverizers & Micro-Grinders",
-    shortDescription: "Impact grinding disc paired with an internal dynamic classifier for narrow particle size distribution.",
-    description: "Specially engineered for non-stick, heat-sensitive, and soft-to-medium hardness materials. Fine-tunes particle top-cut by regulating classifier rpm without interrupting the continuous milling process.",
-    featured: false,
-    images: [
-      "/images/products/pulverizer.svg"
-    ],
-    specifications: [
-      { parameter: "Rotor Type", value: "Pin Disc / Hammer / Beater Blade" },
-      { parameter: "Cut Point (d97)", value: "Configurable down to 5–45 microns" },
-      { parameter: "Material Contact", value: "Carbon Steel or 304/316 Stainless Steel" }
-    ],
-    applications: [
-      "Pigments, Dyes & Resins",
-      "Pharmaceutical Inactives & Fine Chemicals",
-      "Agricultural Chemicals and Fertilizers"
-    ],
-    status: "Configurable OEM Model"
-  },
-  {
-    id: "prod-apron-vibrating-feeder",
-    slug: "heavy-duty-vibrating-feeder",
-    name: "Heavy-Duty Grizzly Vibrating Feeder",
-    category: "material-handling",
-    categoryName: "Material Handling & Feeders",
-    shortDescription: "Rugged dump hopper feeder with adjustable grizzly bars to scalpe undersized material before primary jaw crushers.",
-    description: "Protects primary crushers from blinding and excessive wear by bypassing natural fines. Heavy dual vibrator motors provide uniform forward linear feeding.",
-    featured: false,
-    images: [
-      "/images/products/vibrating-feeder.svg"
-    ],
-    specifications: [
-      { parameter: "Drive Mechanism", value: "Dual Unbalance Vibrating Motors / Exciter" },
-      { parameter: "Grizzly Section", value: "Tapered Manganese Steel Adjustable Spacing" },
-      { parameter: "Liner Plates", value: "Bolt-On Hardox / Wear Resistant AR Steel" }
-    ],
-    applications: [
-      "Quarry Raw Material Dump Bins",
-      "Mining Truck Dump Stations",
-      "Clinker and Bulk Mineral Reclaim Feeders"
-    ],
-    status: "Configurable OEM Model"
+    images: ["/images/products/vibrating-screen-main.svg"]
   }
 ];

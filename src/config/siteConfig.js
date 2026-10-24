@@ -1,42 +1,42 @@
 /**
- * Site Configuration & Business Placeholders
- * Configured specifically for Commercial & Business Sales operations in India / Global B2B.
+ * Site Configuration & Business Focus
+ * Specialized in E-Waste Recycling, Electronic Scrap & Metal Recovery Systems.
  */
 
 export const siteConfig = {
   // Brand & Identity
-  companyName: "VORTEX INDUSTRIAL MACHINERY",
-  tagline: "Industrial Minerals, Aggregate Processing & Machinery Sales",
-  shortDescription: "Direct manufacturer & commercial supplier of stone crushers, grinding mills, vibrating screens, and bulk processing machinery.",
+  companyName: "VORTEX RECYCLING & E-WASTE SYSTEMS",
+  tagline: "Industrial E-Waste Management & Scrap Metal Processing Solutions",
+  shortDescription: "Specialized turnkey engineering and equipment manufacturer of PCB recycling plants, dual-shaft e-waste shredders, metal separation eddy currents, and scrap recovery systems.",
   
   // Visual Identity
   logoText: "VORTEX",
-  logoSubtext: "INDUSTRIAL MACHINERY",
+  logoSubtext: "E-WASTE & SCRAP RECYCLING",
 
   // Leadership & Ownership
   owner: {
     name: "Syed Ismail",
     title: "Founder & Managing Director",
-    role: "Proprietor & Engineering Director",
-    bio: "Under the leadership of Syed Ismail, Vortex Industrial Machinery specializes in providing high-performance comminution, milling, and mineral processing machinery with an unwavering commitment to engineering integrity and client satisfaction."
+    role: "Proprietor & Managing Director",
+    bio: "Under the leadership of Syed Ismail, Vortex specializes in advanced industrial E-Waste recycling systems, scrap metals shredding, and precision secondary material recovery with an unwavering commitment to green engineering and industrial efficiency."
   },
   
-  // Business Sales Contact Information (Indian Business Format)
+  // Business Sales Contact Information
   contact: {
-    email: "sales@example-machinery.in",
-    salesEmail: "business@example-machinery.in",
+    email: "recycling@example-machinery.in",
+    salesEmail: "scrap.sales@example-machinery.in",
     phone: "+91 98765 43210",
     salesPhone: "+91 80 1234 5678",
     whatsapp: "+91 98765 43210",
     address: {
-      plotNo: "Plot No. 42-B, Industrial Area Phase II",
+      plotNo: "Plot No. 42-B, Eco-Industrial Recovery Zone Phase II",
       city: "Ahmedabad / Mumbai",
       stateRegion: "Gujarat / Maharashtra",
       country: "India",
       postalCode: "380015"
     },
     businessHours: "Monday – Saturday: 09:30 AM – 06:30 PM (IST)",
-    supportAvailability: "Direct Business & Sales Desk Available"
+    supportAvailability: "Direct E-Waste & Scrap Project Sales Desk"
   },
 
   socialLinks: {
@@ -53,8 +53,9 @@ export const siteConfig = {
 
   navLinks: [
     { label: "Home", path: "/" },
-    { label: "About Us", path: "/about" },
-    { label: "Industries & Applications", path: "/industries" },
-    { label: "Contact Us", path: "/contact" }
+    { label: "E-Waste Machinery", path: "/machinery" },
+    { label: "Scrap Applications", path: "/applications" },
+    { label: "About & Owner", path: "/about" },
+    { label: "Quote", path: "/contact" }
   ]
 };
