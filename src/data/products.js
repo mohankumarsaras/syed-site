@@ -53,7 +53,7 @@ export const products = [
       "High-purity mixed non-ferrous copper/aluminum extraction",
       "Integrated air classifier and heavy-duty dust scrubbing"
     ],
-    images: ["/images/products/complete-plant.svg"]
+    images: ["/images/products/pcb-recycling-plant.jpg"]
   },
   {
     id: "prod-dual-shaft-shredder",
@@ -74,7 +74,7 @@ export const products = [
       "Segmented hex shaft mounting for fast blade interchange",
       "Heavy cast housing preventing deformation under high shock loads"
     ],
-    images: ["/images/products/jaw-crusher-main.svg"]
+    images: ["/images/products/dual-shaft-shredder.jpg"]
   },
   {
     id: "prod-eddy-current-separator",
@@ -95,7 +95,7 @@ export const products = [
       "Vibratory feeder integration for uniform single-layer presentation",
       "Variable frequency speed control for fine-grain tuning"
     ],
-    images: ["/images/products/cone-crusher-main.svg"]
+    images: ["/images/products/eddy-current-separator.jpg"]
   },
   {
     id: "prod-hydraulic-scrap-baler",
@@ -116,6 +116,6 @@ export const products = [
       "High-pressure hydraulic manifold block with oil cooling circuit",
       "Side-eject or turn-out bale discharge configurations"
     ],
-    images: ["/images/products/vibrating-screen-main.svg"]
+    images: ["/images/products/scrap-baler.jpg"]
   }
 ];

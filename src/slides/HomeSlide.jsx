@@ -83,8 +83,8 @@ export default function HomeSlide({ onNavigate }) {
           <div className="rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800 p-2">
             <div className="aspect-[4/3] rounded-lg overflow-hidden bg-black relative">
               <img
-                src="/images/products/complete-plant.svg"
-                alt="Automated E-Waste Recycling and Scrap Plant"
+                src="/images/hero/ewaste-hero.jpg"
+                alt="Automated E-Waste Recycling and Scrap Plant Facility"
                 className="w-full h-full object-cover opacity-90"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>

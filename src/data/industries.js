@@ -7,7 +7,7 @@ export const industriesData = [
     id: "pcb-electronic-scrap",
     slug: "pcb-and-electronic-scrap",
     name: "PCB & Electronic Scrap Refining",
-    image: "/images/industries/industry-mining.svg",
+    image: "/images/industries/pcb-scrap-ind.jpg",
     shortDescription: "End-of-life IT components, motherboards, telecom cards, and printed circuit board recycling for copper, gold, and palladium extraction.",
     detailedOverview: "Electronic scrap contains significantly higher concentrations of precious metals than raw ore. Our continuous e-waste flowsheet performs pre-shredding, selective component depopulation, micro-pulverizing, and electrostatic metal separation with zero environmental acid leach.",
     typicalMaterials: [
@@ -27,7 +27,7 @@ export const industriesData = [
     id: "cable-copper-wire",
     slug: "cable-wire-recycling",
     name: "Cable & Copper Wire Granulation",
-    image: "/images/industries/industry-cement.svg",
+    image: "/images/industries/cable-wire-ind.jpg",
     shortDescription: "Dry granulating and air density separation for automotive wiring harnesses, power cables, and mixed copper scrap.",
     detailedOverview: "Reclaims 99.8% pure copper and aluminum granules from plastic PVC/rubber insulation without burning or water contamination. Delivers ready-to-melt dry metal granules directly to smelters.",
     typicalMaterials: [
@@ -47,7 +47,7 @@ export const industriesData = [
     id: "ferrous-nonferrous-scrap",
     slug: "metal-scrap-management",
     name: "Ferrous & Non-Ferrous Scrap Management",
-    image: "/images/industries/industry-marble.svg",
+    image: "/images/industries/metal-scrap-ind.jpg",
     shortDescription: "High-density compaction and shearing for metal manufacturing scrap, end-of-life vehicle parts, and foundry returns.",
     detailedOverview: "Transforms low-density bulky scrap into furnace-charged compacted cubes and uniform cut lengths. Optimizes container shipping payload, melting efficiency, and furnace heat cycles for secondary steel and aluminum plants.",
     typicalMaterials: [
@@ -67,7 +67,7 @@ export const industriesData = [
     id: "battery-solar-scrap",
     slug: "battery-solar-panel-recycling",
     name: "Lithium Battery & Solar PV Scrap",
-    image: "/images/industries/industry-mining.svg",
+    image: "/images/industries/battery-solar-ind.jpg",
     shortDescription: "Inert atmosphere shredding and recovery of black mass, nickel, cobalt, copper foil, and solar glass.",
     detailedOverview: "Specialized recovery architecture designed for next-generation clean-tech waste. Delivers precise separation of hazardous lithium battery components and high-purity recovery of aluminum frames, copper ribbons, and silicon wafers.",
     typicalMaterials: [
