@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#334155" stroke-width="0.8" opacity="0.35"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Deep Industrial Canvas -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)" />
+  <rect width="1920" height="1080" fill="url(#grid)" />
+
+  <!-- Industrial Engineering Technical Blueprint Shapes -->
+  <g opacity="0.25">
+    <circle cx="1400" cy="540" r="380" stroke="#0284c7" stroke-width="2" stroke-dasharray="10 15" fill="none" />
+    <circle cx="1400" cy="540" r="260" stroke="#f97316" stroke-width="1.5" fill="none" />
+    <circle cx="1400" cy="540" r="140" stroke="#94a3b8" stroke-width="1" stroke-dasharray="6 6" fill="none" />
+    <line x1="950" y1="540" x2="1850" y2="540" stroke="#0284c7" stroke-width="1" stroke-dasharray="4 8" />
+    <line x1="1400" y1="100" x2="1400" y2="980" stroke="#0284c7" stroke-width="1" stroke-dasharray="4 8" />
+  </g>
+
+  <!-- Large Stylized Heavy Machinery Silhouette: Industrial Jaw Crusher & Milling Plant -->
+  <g transform="translate(1000, 240)">
+    <!-- Base Foundation Skid -->
+    <rect x="50" y="580" width="680" height="50" rx="8" fill="#1e293b" stroke="#475569" stroke-width="3"/>
+    <rect x="90" y="630" width="140" height="60" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <rect x="550" y="630" width="140" height="60" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+
+    <!-- Crusher Body Main Frame -->
+    <polygon points="120,580 180,240 480,210 580,580" fill="#1e293b" stroke="#64748b" stroke-width="4"/>
+    
+    <!-- Heavy Duty Flywheel / Pulley 1 -->
+    <circle cx="280" cy="270" r="190" fill="#0f172a" stroke="#0284c7" stroke-width="16" opacity="0.9" />
+    <circle cx="280" cy="270" r="140" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="15 25" />
+    <!-- Wheel Spokes -->
+    <line x1="280" y1="80" x2="280" y2="460" stroke="#0284c7" stroke-width="12" />
+    <line x1="90" y1="270" x2="470" y2="270" stroke="#0284c7" stroke-width="12" />
+    <line x1="145" y1="135" x2="415" y2="405" stroke="#0284c7" stroke-width="10" />
+    <line x1="145" y1="405" x2="415" y2="135" stroke="#0284c7" stroke-width="10" />
+    <circle cx="280" cy="270" r="50" fill="#f97316" stroke="#ffffff" stroke-width="4" />
+
+    <!-- Crusher Feed Hopper -->
+    <polygon points="340,70 540,70 480,210 320,210" fill="#334155" stroke="#94a3b8" stroke-width="3" />
+    <!-- Tension Rods & Hydraulic Cylinders -->
+    <line x1="530" y1="360" x2="680" y2="540" stroke="#f97316" stroke-width="8" stroke-linecap="round" />
+    <circle cx="680" cy="540" r="18" fill="#f97316" />
+    <line x1="150" y1="380" x2="80" y2="520" stroke="#f97316" stroke-width="8" stroke-linecap="round" />
+    
+    <!-- Discharge Chute Indicator -->
+    <polygon points="260,580 440,580 400,680 300,680" fill="#0f172a" stroke="#0284c7" stroke-width="3" />
+  </g>
+
+  <!-- Ambient Lighting Glows -->
+  <circle cx="1280" cy="510" r="280" fill="#0284c7" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="1680" cy="780" r="240" fill="#f97316" opacity="0.08" filter="url(#glow)"/>
+
+  <!-- Technical Spec Caliper Dimensions Lines -->
+  <g stroke="#64748b" stroke-width="1.5" opacity="0.6">
+    <line x1="1040" y1="920" x2="1750" y2="920" />
+    <line x1="1040" y1="910" x2="1040" y2="930" />
+    <line x1="1750" y1="910" x2="1750" y2="930" />
+    <text x="1395" y="945" fill="#94a3b8" font-family="monospace" font-size="16" text-anchor="middle" letter-spacing="2">HEAVY INDUSTRIAL CONFIGURATION 2400mm BASE</text>
+  </g>
+</svg>
