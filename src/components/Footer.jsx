@@ -153,6 +153,11 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
           <div>
             © {currentYear} {siteConfig.companyName}. All Rights Reserved.
+            {siteConfig.owner?.name && (
+              <span className="block sm:inline sm:ml-2 text-slate-500">
+                | Owned & Directed by <span className="text-slate-300 font-medium">{siteConfig.owner.name}</span>
+              </span>
+            )}
           </div>
           <div className="flex items-center gap-6">
             <span>B2B Machinery Sales Platform</span>

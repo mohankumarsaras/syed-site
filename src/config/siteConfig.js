@@ -12,6 +12,14 @@ export const siteConfig = {
   // Visual Identity
   logoText: "VORTEX",
   logoSubtext: "INDUSTRIAL MACHINERY",
+
+  // Leadership & Ownership
+  owner: {
+    name: "Syed Ismail",
+    title: "Founder & Managing Director",
+    role: "Proprietor & Engineering Director",
+    bio: "Under the leadership of Syed Ismail, Vortex Industrial Machinery specializes in providing high-performance comminution, milling, and mineral processing machinery with an unwavering commitment to engineering integrity and client satisfaction."
+  },
   
   // Business Sales Contact Information (Indian Business Format)
   contact: {

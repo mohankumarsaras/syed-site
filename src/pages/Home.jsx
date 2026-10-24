@@ -5,6 +5,7 @@ import SectionHeading from '../components/SectionHeading';
 import IndustryCard from '../components/IndustryCard';
 import CTASection from '../components/CTASection';
 import { industriesData } from '../data/industries';
+import { siteConfig } from '../config/siteConfig';
 import { 
   IconWrench, 
   IconShield, 
@@ -72,6 +73,24 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          {/* Leadership Commitment Quote */}
+          {siteConfig.owner && (
+            <div className="mt-10 p-6 rounded-lg bg-slate-900 text-white border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <span className="text-xs uppercase tracking-wider text-orange-400 font-bold block mb-1">
+                  Owner & Executive Leadership
+                </span>
+                <p className="text-sm text-slate-300 italic">
+                  "{siteConfig.owner.bio}"
+                </p>
+              </div>
+              <div className="flex-shrink-0 text-left sm:text-right border-t sm:border-t-0 sm:border-l border-slate-800 pt-3 sm:pt-0 sm:pl-6">
+                <div className="font-bold text-white text-sm">{siteConfig.owner.name}</div>
+                <div className="text-xs text-sky-400">{siteConfig.owner.title}</div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

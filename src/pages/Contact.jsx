@@ -7,7 +7,8 @@ import {
   IconMail, 
   IconPhone, 
   IconClock, 
-  IconShield 
+  IconShield,
+  IconUser
 } from '../components/Icons';
 
 export default function Contact() {
@@ -45,6 +46,20 @@ export default function Contact() {
                 </h2>
 
                 <div className="space-y-6 text-sm">
+                  {/* Executive Leadership / Owner */}
+                  {siteConfig.owner && (
+                    <div className="flex items-start gap-3.5 pb-4 border-b border-slate-100">
+                      <div className="w-10 h-10 rounded bg-slate-900 text-white flex items-center justify-center flex-shrink-0">
+                        <IconUser className="w-5 h-5 text-sky-400" />
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900">{siteConfig.owner.name}</div>
+                        <div className="text-xs text-orange-600 font-semibold">{siteConfig.owner.title}</div>
+                        <div className="text-slate-500 text-xs mt-0.5">Proprietor & Commercial Directorate</div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Address */}
                   <div className="flex items-start gap-3.5">
                     <div className="w-10 h-10 rounded bg-orange-100 text-orange-700 flex items-center justify-center flex-shrink-0">

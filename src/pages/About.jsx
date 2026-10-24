@@ -47,13 +47,27 @@ export default function About() {
                 We collaborate directly with quarry operators, mining contractors, cement plants, and chemical mineral processors to evaluate feed characteristics and engineer equipment matched to harsh operational environments.
               </p>
 
-              {/* Client Note */}
-              <div className="p-4 rounded bg-slate-100 border border-slate-200 text-xs text-slate-600">
-                <div className="font-semibold text-slate-800 mb-1">Client Customization Note:</div>
-                <p>
-                  Specific establishment history, founding year, audited production capacity, and manufacturing square footage are client-configurable variables located in <code className="bg-white px-1 py-0.5 rounded border border-slate-200 font-mono">src/config/siteConfig.js</code>.
-                </p>
-              </div>
+              {/* Leadership & Proprietor Note */}
+              {siteConfig.owner && (
+                <div className="p-5 rounded-lg bg-slate-900 text-white border border-slate-800 shadow-sm mt-6">
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <div className="w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center font-bold text-base">
+                      SI
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-100 text-base leading-tight">
+                        {siteConfig.owner.name}
+                      </div>
+                      <div className="text-xs text-orange-400 font-medium">
+                        {siteConfig.owner.title}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {siteConfig.owner.bio}
+                  </p>
+                </div>
+              )}
             </div>
 
             <div className="rounded-lg overflow-hidden border border-slate-200 bg-slate-900 shadow-sm">
